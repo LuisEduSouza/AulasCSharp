@@ -32,17 +32,13 @@ else
 float num1 = 0f;
 float num2 = 0f;
 string operacaoMatematica;
+string opcao;
 
-do
+while (true)
 {
     Console.WriteLine("Informe o primeiro valor:\n " +
-    "+ ou - ou * ou / ou s para sair");
-
+        "+ ou - ou * ou / ou s para sair");
     operacaoMatematica = Console.ReadLine();
-
-    /** Está incompleto por enquanto
-    if(operacaoMatematica == "+" || operacaoMatematica == "-" || operacaoMatematica == "*" || operacaoMatematica == "/")
-    **/
 
     Console.WriteLine("Informe o primeiro valor");
     num1 = float.Parse(Console.ReadLine());
@@ -50,6 +46,51 @@ do
     Console.WriteLine("Informe o segundo valor");
     num2 = float.Parse(Console.ReadLine());
 
+    switch (operacaoMatematica)
+    {
+        case "+":
+            Console.WriteLine($"Soma: {(num1 + num2):F2}");
+            break;
+        case "-":
+            Console.WriteLine($"Substração: {(num1 - num2):F2}");
+            break;
+        case "*":
+            Console.WriteLine($"Substração: {(num1 * num2):F2}");
+            break;
+        case "/":
+            Console.WriteLine($"Substração: {(num1 / num2):F2}");
+            break;
+        default:
+            Console.WriteLine("Informe uma opção válida");
+            break;
+    }
+
+    Console.WriteLine("Deseja continuar s/n");
+    opcao = Console.ReadLine();
+    if (opcao != "s")
+    {
+        break;
+    }
+    else { Console.Clear(); }
+}
+
+/**
+#region Estrutura IF
+do
+{
+    Console.WriteLine("Informe o primeiro valor:\n " +
+    "+ ou - ou * ou / ou s para sair");
+
+    operacaoMatematica = Console.ReadLine();
+
+    if (operacaoMatematica == "+" || operacaoMatematica == "-" || operacaoMatematica == "*" || operacaoMatematica == "/")
+    {
+        Console.WriteLine("Informe o primeiro valor");
+        num1 = float.Parse(Console.ReadLine());
+
+        Console.WriteLine("Informe o segundo valor");
+        num2 = float.Parse(Console.ReadLine());
+    }
     if (operacaoMatematica == "+")
     {
         //Soma
@@ -88,7 +129,8 @@ do
 
     Console.Clear();
 } while (operacaoMatematica != "s");
-
+#endregion
+**/
 
 
 
